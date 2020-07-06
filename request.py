@@ -7,9 +7,10 @@ api_usr = ""
 api_pwd = ""
 message_id = 1
 message_type = 9000 # 9000 echo test request
-interface_id_hex = "D004005" # hex format
+interface_id_hex = "" # hex format 6 symbols
 interface_id_dec = int(interface_id_hex, 16) # transfer into dec
 remote_address = "127.0.0.1"
+api_sb_url = "https://"
 
 ### Form <authdata> Tag.
 authdata = '<authdata msg_id="{msg_id}" user="{user}" password="{password}" msg_type="{msg_type}" user_ip="{user_ip}" />'.format(
@@ -46,7 +47,6 @@ print(xml)
 
 ### Request
 headers = {'Content-Type': 'text/xml'}
-api_sb_url = "https://demo-api.simbase.eu"
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 ### Send
