@@ -50,7 +50,7 @@ headers = {'Content-Type': 'text/xml'}
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 ### Send
-responnse = requests.post(api_sb_url, data=xml, headers=headers, verify=False)
+response = requests.post(api_sb_url, data=xml, headers=headers, verify=False)
 
 ### Check Response
-print(responnse.text)
+print(response.text)
