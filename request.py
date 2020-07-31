@@ -35,7 +35,7 @@ xml = """<?xml version="1.0" encoding="UTF-8"?>
         <error id="0" />
         <auth pwd="open">{authdata}</auth>
     </header>
-    <body>Hello Simbase!</body>
+    <body>Hello World!</body>
 </{xml_root}>""".format(
     interface_id = interface_id_dec,
     message_id = message_id,
