@@ -3,6 +3,7 @@ import requests
 import urllib3
 
 ### API SETTINGS
+xml_root = ""
 api_usr = ""
 api_pwd = ""
 message_id = 1
@@ -27,7 +28,7 @@ base64_bytes = base64.b64encode(authdata_bytes)
 base64_authdata = base64_bytes.decode('ascii')
 
 xml = """<?xml version="1.0" encoding="UTF-8"?>
-<sbapi>
+<{xml_root}>
     <header>
         <interface id="{interface_id}" version="8" />
         <message id="{message_id}" ignore_id="yes" type="{message_type}" created="2023-10-23T12:34:56Z" />
@@ -35,11 +36,12 @@ xml = """<?xml version="1.0" encoding="UTF-8"?>
         <auth pwd="open">{authdata}</auth>
     </header>
     <body>Hello Simbase!</body>
-</sbapi>""".format(
+</{xml_root}>""".format(
     interface_id = interface_id_dec,
     message_id = message_id,
     message_type = message_type,
-    authdata = base64_authdata
+    authdata = base64_authdata,
+    xml_root = xml_root
 )
 
 ### Check XML structure
